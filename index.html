@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="UniTools - Free online PDF tools, Image editors, and Converters. Make your life easier with our all-in-one utility suite." />
+    <meta name="keywords" content="free pdf tools, image background remover, file converter, unitools, calculators" />
+    <meta name="author" content="UniTools" />
+    <meta name="theme-color" content="#2563eb" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="UniTools" />
+    <title>UniTools - Free PDF & Image Tools</title>
+    
+    <!-- Tailwind CSS (CDN for simplicity, though build version is better for production speed) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'float-delayed': 'float 6s ease-in-out 3s infinite',
+              'popIn': 'popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
+              'fadeIn': 'fadeIn 0.5s ease-out forwards',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              popIn: {
+                '0%': { opacity: '0', transform: 'scale(0.5)' },
+                '100%': { opacity: '1', transform: 'scale(1)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js"></script>
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      /* Custom scrollbar for cleaner look */
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #f1f5f9; }
+      ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+      
+      /* Dark mode scrollbar */
+      .dark ::-webkit-scrollbar-track { background: #0f172a; }
+      .dark ::-webkit-scrollbar-thumb { background: #334155; }
+      .dark ::-webkit-scrollbar-thumb:hover { background: #475569; }
+      
+      /* Custom bg pattern for image tools */
+      .bg-checkered {
+        background-image: linear-gradient(45deg, #ccc 25%, transparent 25%), 
+                          linear-gradient(-45deg, #ccc 25%, transparent 25%), 
+                          linear-gradient(45deg, transparent 75%, #ccc 75%), 
+                          linear-gradient(-45deg, transparent 75%, #ccc 75%);
+        background-size: 20px 20px;
+        background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+      }
+      
+      /* Utility classes not in Tailwind CDN by default */
+      .perspective-1000 { perspective: 1000px; }
+      .transform-style-3d { transform-style: preserve-3d; }
+      .scrollbar-hide::-webkit-scrollbar { display: none; }
+      .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "downloadjs": "https://aistudiocdn.com/downloadjs@^1.4.7",
+    "pdfjs-dist": "https://aistudiocdn.com/pdfjs-dist@^3.11.174",
+    "pdf-lib": "https://aistudiocdn.com/pdf-lib@^1.17.1",
+    "jszip": "https://aistudiocdn.com/jszip@^3.10.1",
+    "mammoth": "https://aistudiocdn.com/mammoth@^1.11.0",
+    "pptxgenjs": "https://aistudiocdn.com/pptxgenjs@^4.0.1",
+    "xlsx": "https://aistudiocdn.com/xlsx@^0.18.5",
+    "vite": "https://aistudiocdn.com/vite@^7.2.6",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-50 text-slate-900 antialiased dark:bg-slate-900 dark:text-slate-100 transition-colors duration-200">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
